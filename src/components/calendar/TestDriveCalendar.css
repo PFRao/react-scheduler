@@ -1,6 +1,20 @@
+.no-select {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
+
 .test-drive-calendar-container {
-  text-align: center;
-  width: 100%; }
+  text-align: center; }
 
 button.calendar-control {
   display: inline-block;
@@ -8,11 +22,8 @@ button.calendar-control {
   border: none;
   background: #FFF;
   color: #444;
-  width: 10%;
-  height: 40px;
-  text-align: center;
-  padding: 3px 5px;
-  margin: 50px 0 0 0;
+  padding: 3px 0px;
+  margin: 45px 0 0 0;
   font-size: 2em; }
 
 button.time-control {
@@ -24,8 +35,9 @@ button.time-control {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  width: 40vw;
-  touch-action: none; }
+  width: 56vw;
+  touch-action: none;
+  font-size: 14px; }
   .test-drive-calendar ul.test-drive-calendar-dates {
     display: inline-block;
     padding: 0;
@@ -33,10 +45,10 @@ button.time-control {
   .test-drive-calendar li {
     display: inline-block;
     margin: 0 5px 0 5px;
-    min-width: 100px;
+    min-width: 75px;
     cursor: pointer;
     vertical-align: top;
-    padding-bottom: 160px; }
+    padding-bottom: 100px; }
     .test-drive-calendar li.selected {
       padding-bottom: 0; }
       .test-drive-calendar li.selected .test-drive-calendar-block .calendar-date {
@@ -45,26 +57,21 @@ button.time-control {
       .test-drive-calendar li.selected .hours-list-container {
         display: block; }
         .test-drive-calendar li.selected .hours-list-container .hours-list-inner-container {
-          height: 80px;
+          height: 100px;
           overflow-y: scroll; }
-      .test-drive-calendar li.selected .hours-list {
-        transition: all 0.5s ease-out; }
-        .test-drive-calendar li.selected .hours-list .hours-list-item {
-          background: #F5F5F5;
-          margin: 0;
-          width: 100%;
-          height: 40px;
-          text-align: center;
-          padding: 10px 15px; }
-        .test-drive-calendar li.selected .hours-list .hours-list-item.selected {
-          background: #26C39F;
-          color: white; }
+      .test-drive-calendar li.selected .hours-list .hours-list-item {
+        background: #F5F5F5;
+        margin: 0;
+        text-align: center;
+        padding: 10px 15px; }
+      .test-drive-calendar li.selected .hours-list .hours-list-item.selected {
+        background: #26C39F;
+        color: white; }
     .test-drive-calendar li .hours-list-container {
       display: none; }
     .test-drive-calendar li .test-drive-calendar-block {
       display: inline-block;
-      text-align: center;
-      width: 100%; }
+      text-align: center; }
       .test-drive-calendar li .test-drive-calendar-block .calendar-day {
         color: dimgray;
         margin: 0 0 15px 0; }
@@ -80,3 +87,7 @@ button.time-control {
 @media only screen and (min-width: 980px) {
   .test-drive-calendar {
     width: 80%; } }
+
+@media only screen and (max-width: 382px) {
+  .test-drive-calendar {
+    width: 45vw; } }
