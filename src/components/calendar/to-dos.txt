@@ -1,0 +1,12 @@
+definitely:
+
+- create container component
+- allow custom calendar size
+- allow custom colors
+- allow custom hours list display range
+- replace material-ui dependency
+
+maybe:
+
+- modify css to allow custom size
+- allow a time to be 'pre-chosen'
