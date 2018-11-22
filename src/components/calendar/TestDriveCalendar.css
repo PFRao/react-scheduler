@@ -1,3 +1,5 @@
+/* Spacing */
+/* Colors */
 .no-select {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -14,16 +16,28 @@
                                   supported by Chrome and Opera */ }
 
 .test-drive-calendar-container {
+  position: relative;
+  padding: 0 40px;
   text-align: center; }
+  .test-drive-calendar-container * {
+    box-sizing: border-box; }
+  .test-drive-calendar-container li {
+    list-style: none; }
+  .test-drive-calendar-container .calendar-control {
+    position: absolute;
+    top: 0; }
+    .test-drive-calendar-container .calendar-control:first-child {
+      left: 0px; }
+    .test-drive-calendar-container .calendar-control:last-child {
+      right: 0px; }
 
 button.calendar-control {
-  display: inline-block;
-  vertical-align: top;
+  max-width: 40px;
   border: none;
   background: #FFF;
   color: #444;
-  padding: 3px 0px;
-  margin: 45px 0 0 0;
+  padding: 10px;
+  margin: 32px 0 0 0;
   font-size: 2em; }
 
 button.time-control {
@@ -32,62 +46,48 @@ button.time-control {
   color: #26C39F; }
 
 .test-drive-calendar {
-  display: inline-block;
-  overflow: hidden;
+  overflow: scroll;
   white-space: nowrap;
-  width: 56vw;
   touch-action: none;
   font-size: 14px; }
   .test-drive-calendar ul.test-drive-calendar-dates {
-    display: inline-block;
+    display: flex;
     padding: 0;
     transition: all 0.5s ease-out; }
   .test-drive-calendar li {
-    display: inline-block;
-    margin: 0 5px 0 5px;
-    min-width: 75px;
-    cursor: pointer;
-    vertical-align: top;
-    padding-bottom: 100px; }
-    .test-drive-calendar li.selected {
-      padding-bottom: 0; }
-      .test-drive-calendar li.selected .test-drive-calendar-block .calendar-date {
-        background: #26C39F;
-        color: white; }
-      .test-drive-calendar li.selected .hours-list-container {
-        display: block; }
-        .test-drive-calendar li.selected .hours-list-container .hours-list-inner-container {
-          height: 100px;
-          overflow-y: scroll; }
-      .test-drive-calendar li.selected .hours-list .hours-list-item {
-        background: #F5F5F5;
-        margin: 0;
-        text-align: center;
-        padding: 10px 15px; }
-      .test-drive-calendar li.selected .hours-list .hours-list-item.selected {
-        background: #26C39F;
-        color: white; }
+    min-width: 90px;
+    cursor: pointer; }
+    .test-drive-calendar li.selected .test-drive-calendar-block .calendar-date {
+      background: #26C39F;
+      color: white; }
+    .test-drive-calendar li.selected .hours-list-container {
+      display: block; }
+      .test-drive-calendar li.selected .hours-list-container .hours-list-inner-container {
+        max-height: 50vh;
+        overflow-y: scroll; }
+    .test-drive-calendar li.selected .hours-list .hours-list-item {
+      background: #F5F5F5;
+      margin: 0;
+      text-align: center;
+      padding: 10px 15px; }
+    .test-drive-calendar li.selected .hours-list .hours-list-item.selected {
+      background: #26C39F;
+      color: #FFF; }
     .test-drive-calendar li .hours-list-container {
       display: none; }
     .test-drive-calendar li .test-drive-calendar-block {
-      display: inline-block;
       text-align: center; }
       .test-drive-calendar li .test-drive-calendar-block .calendar-day {
-        color: dimgray;
+        color: #696969;
         margin: 0 0 15px 0; }
       .test-drive-calendar li .test-drive-calendar-block .calendar-date {
         background: #F5F5F5;
         color: #444;
-        padding: 10px;
-        width: 100%; }
+        padding: 10px; }
       .test-drive-calendar li .test-drive-calendar-block .calendar-date.closed {
         background: #CCC;
         color: #F5F5F5; }
 
-@media only screen and (min-width: 980px) {
+@media (pointer: coarse) {
   .test-drive-calendar {
-    width: 80%; } }
-
-@media only screen and (max-width: 382px) {
-  .test-drive-calendar {
-    width: 45vw; } }
+    overflow: hidden; } }
